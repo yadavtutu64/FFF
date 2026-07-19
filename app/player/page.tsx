@@ -1,5 +1,6 @@
 "use client";
 
+import React, { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import dynamic from "next/dynamic";
 import { ChevronLeft, Share2, Download, MoreVertical } from "lucide-react";
@@ -7,7 +8,7 @@ import Link from "next/link";
 
 const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
 
-export default function PlayerPage() {
+function PlayerContent() {
   const searchParams = useSearchParams();
   const videoId = searchParams.get("v");
 
@@ -60,5 +61,13 @@ export default function PlayerPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function PlayerPage() {
+  return (
+    <Suspense fallback={<div className="animate-pulse">Loading Player...</div>}>
+      <PlayerContent />
+    </Suspense>
   );
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { useFavoritesStore } from "@/store/favorites";
 import BatchCard from "@/components/BatchCard";
 import { Heart } from "lucide-react";

@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { useFavoritesStore } from "@/store/favorites";
 import { User, Settings, Shield, Info, LogOut, Heart, ChevronRight } from "lucide-react";
 import Image from "next/image";

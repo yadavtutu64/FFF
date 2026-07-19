@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import Image from "next/image";
 import { Play, Clock, Calendar, User } from "lucide-react";
 import { motion } from "framer-motion";

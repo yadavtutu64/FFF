@@ -1,6 +1,6 @@
 "use client";
 
-import { use, useState } from "react";
+import React, { use, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { getBatchDetails, getAnnouncements } from "@/services/api";
 import Image from "next/image";

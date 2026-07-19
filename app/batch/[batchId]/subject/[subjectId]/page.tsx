@@ -1,6 +1,6 @@
 "use client";
 
-import { use, useState } from "react";
+import React, { use, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { getTopics } from "@/services/api";
 import ChapterCard from "@/components/ChapterCard";
@@ -16,7 +16,7 @@ export default function SubjectPage({ params }: { params: Promise<{ batchId: str
     queryFn: () => getTopics(batchId, subjectId),
   });
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <div className="animate-pulse flex items-center justify-center min-h-[50vh]">Loading Topics...</div>;
 
   return (
     <div className="space-y-6 pb-20">
